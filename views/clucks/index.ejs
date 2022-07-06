@@ -1,0 +1,23 @@
+<%- include('../partials/header') %> 
+
+<% for (let cluck of clucks){ %> 
+    <div class="card mb-3" >
+        <div class="row g-0">
+        <div class="col-md-1">
+            <img src="/image/avatar.jpg" class="img-fluid rounded-start" alt="avatar" style = 'max-width: 100px;max-height: 100px;'>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title"><%- cluck.username %>   ||    <span><%- cluck.created_at %> </span></h5>
+            <p class="card-text"><%- cluck.content %></p>
+            <% if (cluck.image_url) {%> 
+                <img src='<%- cluck.image_url%>' alt='cluck image' style="max-width : 50em ; max-height:30em">
+            <% } %> 
+            </div>
+        </div>
+        </div>
+    </div>
+<% } %> 
+
+
+<%- include('../partials/footer') %> 
