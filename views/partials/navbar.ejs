@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/image/icon.jpg" alt="" width="70" height="50">
+      </a>
+        <% if (username) { %>
+            <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+               
+                <form action="/clucks/new" method="POST" class=form-inline>
+                    <button class="btn btn-outline-dark" type="submit">Cluck!</button>
+                </form>
+                <span class="m-3 navbar-text">
+                    <%- username %>
+                </span>
+                <form action="/logout" method="POST" class=form-inline>
+                    <button class="btn btn-outline-dark" type="submit">Sign Out</button>
+                </form>
+            </div>
+            
+        <% } else { %>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end"></div>
+                <form action="/clucks/new" method="POST" class=form-inline>
+                    <button class="btn btn-outline-dark" type="submit">Cluck!</button>
+                </form>
+                <form action="/sign_in" method="POST" class=form-inline>
+                    <button class="btn btn-outline-dark" type="submit">Sign In</button>
+                </form>
+            </div>
+        <% } %>
+      </div>
+    </div>
+  </nav>
